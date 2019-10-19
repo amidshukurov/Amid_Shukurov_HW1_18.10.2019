@@ -1,3 +1,4 @@
+
 import java.io.Console;
 import java.util.Random;
 import java.util.Scanner;
@@ -16,19 +17,19 @@ public class HomeWork1 {
         int[] playerNumberArray = new int[100];
         System.out.println("Enter your number to begin gambling: ");
         int playerNumber = in.nextInt();
-        playerNumberArray[0]=playerNumber;
+        playerNumberArray[0] = playerNumber;
         for (int i = 1; ; i++) {
 
             if (playerNumber < program_number) {
                 System.out.println("Your number is too small. Please, try again. ");
                 System.out.println("Enter another number: ");
                 playerNumber = in.nextInt();
-                playerNumberArray[i]=playerNumber;
+                playerNumberArray[i] = playerNumber;
             } else if (playerNumber > program_number) {
                 System.out.println("Your number is too big. Please, try again. ");
                 System.out.println("Enter another number: ");
                 playerNumber = in.nextInt();
-                playerNumberArray[i]=playerNumber;
+                playerNumberArray[i] = playerNumber;
 
             } else {
                 System.out.println("Congratulations " + nameOfPlayer);
@@ -39,6 +40,4 @@ public class HomeWork1 {
 
         }
     }
-
-
 }
