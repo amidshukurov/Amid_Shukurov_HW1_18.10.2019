@@ -15,24 +15,31 @@ public class HomeWork2 {
         }
         // randomly selection of target
         Random random = new Random();
-        int first = random.nextInt(5);
-        int second = random.nextInt(5);
-        System.out.println(first);
-        System.out.println(second);
-        target[first][second] = 'o';
+        int row = random.nextInt(5);
+        int column = random.nextInt(5);
+        //My target i in the position target[row][column]
+        System.out.println(row+1);
+        System.out.println(column+1);
         //Game starts here
         System.out.println("All set. Get ready to rumble!");
         Scanner in = new Scanner(System.in);
         /*infinite loop start. Shooting will continue
         until finding target
         */
+
         while (true) {
             System.out.println("Enter row: ");
+            if (!in.hasNextInt()) {
+                System.out.println("Enter only number: Try again");
+                in.next();
+                continue;
+            }
             int playerShotRow=in.nextInt();
             while (true) {
-                //if entered out of scope 0-4 continue shooting
-                if (playerShotRow < 0 || playerShotRow > 4) {
-                    System.out.println("Out of scope. Try again for row: ");
+                //if entered out of scope 1-5 continue shooting
+                if (playerShotRow < 1 || playerShotRow > 5) {
+                    System.out.println("Out of scope. Try again: ");
+                    System.out.println("Enter row: ");
                     playerShotRow = in.nextInt();
                 } else {
                     break;
@@ -40,10 +47,18 @@ public class HomeWork2 {
             }
 
             System.out.println("Enter column: ");
-            int playerShotColumn = in.nextInt();
+            int playerShotColumn = 0;;
             while (true) {
-                if (playerShotColumn < 0 || playerShotColumn > 4) {
-                    System.out.println("Out of scope. Try again for column: ");
+                if (!in.hasNextInt()) {
+                    System.out.println("Enter only number: Try again");
+                    System.out.println("Enter column: ");
+                    in.next();
+                    continue;
+                }
+                playerShotColumn= in.nextInt();
+                if (playerShotColumn < 1 || playerShotColumn > 5) {
+                    System.out.println("Out of scope. Try again: ");
+                    System.out.println("Enter column: ");
                     playerShotColumn = in.nextInt();
 
                 } else {
@@ -51,13 +66,9 @@ public class HomeWork2 {
                 }
             }
 
-            if (playerShotRow < 0 & playerShotRow > 4) {
-                System.out.println("Out of scope. Try again: ");
-                playerShotRow = in.nextInt();
-            }
-            if (first == playerShotRow & second == playerShotColumn) {
+            if (row == (playerShotRow-1) & column == (playerShotColumn-1)) {
                 System.out.println("You have won");
-                target[first][second] = 'X';
+                target[row][column] = 'X';
                 for (int i = 0; i < 5; i++) {
                     for (int j = 0; j < 5; j++) {
                         System.out.print(target[i][j]);
@@ -67,9 +78,15 @@ public class HomeWork2 {
                 //if target found end of loop
                 break;
             } else {
-                target[playerShotRow][playerShotColumn] = '*';
+                target[playerShotRow-1][playerShotColumn-1] = '*';
                 //if target missed continue shooting.
-                System.out.println("You missed target. Shoot again.");
+                System.out.println("You missed target. SHOOT AGAIN.");
+                for (int i = 0; i < 5; i++) {
+                    for (int j = 0; j < 5; j++) {
+                        System.out.print(target[i][j]);
+                    }
+                    System.out.println();
+                }
 
             }
         }
