@@ -66,7 +66,7 @@ public class HomeWork2 {
                 }
             }
 
-            if (row == (playerShotRow-1) & column == (playerShotColumn-1)) {
+            if (row == (playerShotRow-1) && column == (playerShotColumn-1)) {
                 System.out.println("You have won");
                 target[row][column] = 'X';
                 for (int i = 0; i < 5; i++) {
