@@ -1,3 +1,5 @@
+package HW2_Arrays_Shooting_at_the_square;
+
 import javax.swing.text.MutableAttributeSet;
 import java.util.Arrays;
 import java.util.List;

@@ -1,3 +1,4 @@
+package HW3_Week_Planner;
 
 import java.util.Scanner;
 

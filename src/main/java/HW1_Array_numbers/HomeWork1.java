@@ -1,3 +1,4 @@
+package HW1_Array_numbers;
 
 import java.io.Console;
 import java.util.Random;
