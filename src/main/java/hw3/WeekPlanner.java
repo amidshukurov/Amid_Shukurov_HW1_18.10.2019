@@ -37,6 +37,7 @@ public class WeekPlanner {
                     System.out.println("Change request");
                     String takeDayOfWeek = s.replaceAll("change","").replaceAll("reschedule","");
                     counterForWrongChange = 1;
+
                     for (int i = 0; i < scedule.length; i++) {
                         if (scedule[i][0].toLowerCase().equals(takeDayOfWeek)) {
                             counterForChange=1;
