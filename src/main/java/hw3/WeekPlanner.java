@@ -1,8 +1,8 @@
-package HW3_Week_Planner;
+package hw3;
 
 import java.util.Scanner;
 
-public class HW3_WeekPlanner {
+public class WeekPlanner {
     public static void main(String[] args) {
 
         String[][] scedule = new String[7][2];
@@ -22,25 +22,25 @@ public class HW3_WeekPlanner {
         scedule[6][1] = "Again turning to lessons.a";
         Scanner input = new Scanner(System.in);
         while (true){
-            System.out.println("1. Please, input the day of the week:");
-            //here input is cleaned from spaces
+            System.out.println("Please, input the day of the week:");
             String s = input.nextLine().toLowerCase().replaceAll(" ","");
-//----------------------------------------------------------------------------------------------//
-            //here system check input correctness. If wrong day of week entered system ask for enter correct day.
-            // and if there is change request, task of the day is changed here and iteration start from top.
-            int countercheck=0;//if day of week founded it turns to 1
-            int counterforchange = 0; // if there is change request it turns to 1
-            int counterforwrongchange =0;//if there is change and day of week entered wrong i use it to iterate till right day of week input
-            while (countercheck==0) {
+
+            /*here system check input correctness. If wrong day of week entered system ask for enter correct day.
+            and if there is change request, task of the day is changed here and iteration start from top.*/
+
+            int counterCheck=0;//if day of week founded it turns to 1
+            int counterForChange = 0; // if there is change request it turns to 1
+            int counterForWrongChange =0;//if there is change and day of week entered wrong i use it to iterate till right day of week input
+            while (counterCheck==0) {
                 // if there is change request, task of the day is changed here and iteration start from top.
-                if (s.contains("change")||s.contains("reschedule")||counterforwrongchange ==1) {
+                if (s.contains("change")||s.contains("reschedule")||counterForWrongChange ==1) {
                     System.out.println("Change request");
                     String takeDayOfWeek = s.replaceAll("change","").replaceAll("reschedule","");
-                    counterforwrongchange = 1;
+                    counterForWrongChange = 1;
                     for (int i = 0; i < scedule.length; i++) {
                         if (scedule[i][0].toLowerCase().equals(takeDayOfWeek)) {
-                            counterforchange=1;
-                            countercheck=1;
+                            counterForChange=1;
+                            counterCheck=1;
                             s="";
                             System.out.format("Please, input new tasks for %s.", scedule[i][0]);
                             scedule[i][1]=input.nextLine();
@@ -48,32 +48,29 @@ public class HW3_WeekPlanner {
                         }
                     }
                 }
-                if (s.equals("exit"))  countercheck = 1;
+                if (s.equals("exit"))  counterCheck = 1;
                 for (String[] strings : scedule) {
                     if (strings[0].toLowerCase().equals(s)) {
-                        countercheck = 1;
+                        counterCheck = 1;
                         break;
                     }
                 }
 
-                if (counterforchange==0 & counterforwrongchange==1) {
+                if (counterForChange==0 & counterForWrongChange==1) {
                     System.out.println("Change request can not be completed because you entered wrong day.");
                     System.out.println("2. Please, input the day of the week:");
-                    counterforchange=0;
-                    counterforwrongchange=1;
+                    counterForChange=0;
+                    counterForWrongChange=1;
                     s = input.nextLine().toLowerCase().replaceAll(" ","");
                     continue;
                 }
-                if (countercheck!=1){
+                if (counterCheck!=1){
                     System.out.println(s);
                     System.out.println("Sorry, I don't understand you, please try again.");
                     System.out.println("3. Please, input the day of the week:");
                     s = input.nextLine().toLowerCase().replaceAll(" ","");
                 }
             }
-//-----------------------------------------------------------------------------------------------------------//
-
-            //check for task of the day.
             switch (s){
                 case "sunday":
                     System.out.format("Your tasks for %s: %s\n",scedule[0][0],scedule[0][1]);
@@ -99,7 +96,6 @@ public class HW3_WeekPlanner {
                 case "exit":
                     System.out.println("Thank you");
                     break;
-
             }
             break;
         }

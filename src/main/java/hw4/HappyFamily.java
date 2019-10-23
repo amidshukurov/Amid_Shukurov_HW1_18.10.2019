@@ -1,6 +1,6 @@
-package HW4_A_Happy_Family;
+package hw4;
 
-public class Main {
+public class HappyFamily {
 
     public static void main(String[] args) {
         Pet newPet = new Pet("Dog","Rock", 5, 75,new String[]{"eat","drink","sleep"});
