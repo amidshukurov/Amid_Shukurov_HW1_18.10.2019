@@ -1,3 +1,5 @@
+package classroom;
+
 import java.util.Random;
 public class classTest {
 
