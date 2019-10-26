@@ -26,11 +26,9 @@ public class PrintPositons {
                 listOfChars.append(gen_random.charAt(i));
                 listOfChars.append(':');
                 listOfChars.append(count);
-                listOfChars.append(' ');
-                listOfChars.append('<');
+                listOfChars.append(" < ");
                 listOfChars.append(listOfPosition);
-                listOfChars.append('>');
-                listOfChars.append(' ');
+                listOfChars.append("> ");
                 listOfPosition.replace(0,listOfPosition.length()-1,"");
             }
         }
