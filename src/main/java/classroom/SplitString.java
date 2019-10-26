@@ -94,11 +94,11 @@ public class SplitString {
             if (isUpperConstant(c)){
                 uc.append(c);
             } else if (isUpperVowel(c)) {
-                uc.append(c);
+                uv.append(c);
             } else if (isLowerConstant(c)) {
-                uc.append(c);
+                lv.append(c);
             } else if (isLowerVowel(c)) {
-                uc.append(c);
+                lv.append(c);
             }
         }
         return new Result(origin,
@@ -116,11 +116,16 @@ public class SplitString {
                 result.getLowerVowels()
         );
     }
+    public void printPostions(){
+
+    }
+
     public static void main(String[] args) {
         String origin = gen_random(10);
         SplitString app = new SplitString();
         Result result = app.process(origin);
         app.print(result);
+
 
     }
 
