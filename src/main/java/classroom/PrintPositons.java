@@ -1,11 +1,13 @@
 package classroom;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 public class PrintPositons {
     public static void main(String[] args) {
         SplitString s  =   new SplitString();
-       String gen_random = s.gen_random(10).toLowerCase();
+        String gen_random = s.gen_random(10).toLowerCase();
         System.out.println(gen_random);
         StringBuilder listOfChars = new StringBuilder();
         StringBuilder listOfPosition = new StringBuilder();
@@ -36,5 +38,4 @@ public class PrintPositons {
         System.out.println(listOfChars);
 
     }
-
 }
