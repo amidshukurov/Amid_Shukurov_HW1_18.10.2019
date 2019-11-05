@@ -1,8 +1,4 @@
-package classroom;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+package classroom.Old;
 
 public class PrintPositons {
     public static void main(String[] args) {

@@ -15,8 +15,7 @@ public class HiddenData implements Iterable<String> {
     Iterator<String> iterator = new Iterator<String>() {
       Random random = new Random();
       int[] indexes = new int[months.size()-1];
-
-      int index=0;
+      int index = 0;
 
       @Override
       public boolean hasNext() {
@@ -25,14 +24,8 @@ public class HiddenData implements Iterable<String> {
 
       @Override
       public String next() {
-        int rm = random.nextInt(months.size()-1);
-        indexes[index]=rm;
-        index++;
-        for (int i = 0; i <= index; i++) {
-          if (rm!=indexes[i]){
-            return months.get(rm);
-          } else  continue;
-        }
+        int rm= random.nextInt(months.size()-1)+1;
+        return months.get(indexes[index]);
       }
     };
 

@@ -1,4 +1,4 @@
-package classroom;
+package classroom.Old;
 
 public class Rectangle extends AbstractFigure{
    private Point p1;

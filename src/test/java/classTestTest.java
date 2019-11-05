@@ -1,4 +1,4 @@
-import classroom.classTest;
+import classroom.Old.classTest;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
