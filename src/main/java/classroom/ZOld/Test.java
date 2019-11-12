@@ -28,14 +28,32 @@ public class Test {
             System.out.println(gcd(15,65));
         }
     }*/
+
     public static void main(String[] args) throws IOException {
-        if ('9'<'1') System.out.println("True");
-        else System.out.println("False");
 
-        if ('9'>'7') System.out.println("True");
-        else System.out.println("False");
+/*        System.out.println(43&56);
+        System.out.println(43|56);
+        System.out.println(43^56);
+        System.out.println(~43);
+        System.out.println(11>>1);
+        System.out.println(11<<1);*/
+        System.out.println(new Test().convertBinary(8));
 
-        if ('9'!='q') System.out.println("True");
-        else System.out.println("False");
+
+    }
+    String convertBinary(int i){
+        String origin= "";
+for (int j=0; j<7;j++){
+        if (i % 2 != 0) {
+            i/=2;
+            origin+='1';
+        }
+        else {
+            i/=2;
+            origin+='0';
+        }
+}
+
+        return origin;
     }
 }

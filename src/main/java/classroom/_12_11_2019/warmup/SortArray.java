@@ -1,10 +1,8 @@
-package classroom._12_11_2019;
-
-import java.util.Arrays;
+package classroom._12_11_2019.warmup;
 
 public class SortArray {
 
-    int[] asc(int [] origin){
+    public int[] asc(int[] origin){
         int [] sorted = origin.clone();
         for (int i=1;i<sorted.length;i++){
             for (int j=0;j<i;j++){

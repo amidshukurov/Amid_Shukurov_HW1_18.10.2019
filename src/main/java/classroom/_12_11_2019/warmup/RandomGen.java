@@ -1,4 +1,4 @@
-package classroom._12_11_2019;
+package classroom._12_11_2019.warmup;
 
 import java.util.Random;
 
