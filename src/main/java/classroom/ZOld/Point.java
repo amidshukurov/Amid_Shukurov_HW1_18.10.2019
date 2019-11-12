@@ -1,4 +1,4 @@
-package classroom.Old;
+package classroom.ZOld;
 
 public class Point {
     private final int x,y;

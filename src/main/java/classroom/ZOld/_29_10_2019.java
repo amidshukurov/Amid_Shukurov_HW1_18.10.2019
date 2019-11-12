@@ -1,7 +1,6 @@
-package classroom.Old;
+package classroom.ZOld;
 
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class _29_10_2019 {

@@ -1,8 +1,11 @@
 package hw4;
 
+import hw5.Family;
+
 import java.util.Arrays;
 
 public class Human {
+    Family myFamily;
     String name;
     String surName;
     int dateOfBirth;
@@ -43,19 +46,21 @@ public class Human {
 
     @Override
     public String toString() {
-        String humanInfo = new String();
-        humanInfo="Human { name= " + name + ", surname= " + surName +", year= " + dateOfBirth + " " +
+        String humanInfo = "Human { name= " + name + ", surname= " + surName +", year= " + dateOfBirth + " " +
                 ",iq= " + iq + ", mother = " + mother.name + " " + mother.surName+", father= " + father.name +
                 " "+ father.surName;
-        String petinfo = new String();
-        petinfo=", pet=dog{nickName= " + pet.nickName+ ", age = " + pet.age + ", trickLavel = "
+        String petInfo =", pet=dog{nickName= " + pet.nickName+ ", age = " + pet.age + ", trickLavel = "
                 + pet.trickLevel+ ", habits= " + Arrays.toString(pet.habits) + "}";
        if (pet.species.toLowerCase().equals("dog")) {
-           return humanInfo+petinfo;
+           return humanInfo+petInfo;
 
        } else
            {
            return humanInfo;
        }
+    }
+
+    public String getName() {
+        return name;
     }
 }

@@ -1,4 +1,4 @@
-package classroom.Old;
+package classroom.ZOld;
 
 public class Triangle extends AbstractFigure{
     private Point p1;

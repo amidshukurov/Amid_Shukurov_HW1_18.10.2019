@@ -1,12 +1,6 @@
-package classroom.Old;
-
-import org.w3c.dom.ls.LSOutput;
+package classroom.ZOld;
 
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
-import java.util.Scanner;
 
 public class Test {
 

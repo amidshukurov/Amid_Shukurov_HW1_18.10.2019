@@ -1,4 +1,4 @@
-package classroom.Old;
+package classroom.ZOld;
 
 import java.util.Arrays;
 import java.util.Random;

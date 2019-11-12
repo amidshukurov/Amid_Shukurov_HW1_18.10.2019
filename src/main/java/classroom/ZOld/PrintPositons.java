@@ -1,4 +1,4 @@
-package classroom.Old;
+package classroom.ZOld;
 
 public class PrintPositons {
     public static void main(String[] args) {

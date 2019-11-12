@@ -1,4 +1,4 @@
-package classroom.Old;
+package classroom.ZOld;
 
 public class Calculator {
   public int add (int a, int b) {

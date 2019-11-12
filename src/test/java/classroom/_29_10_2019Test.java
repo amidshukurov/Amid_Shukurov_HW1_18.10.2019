@@ -1,6 +1,6 @@
 package classroom;
 
-import classroom.Old._29_10_2019;
+import classroom.ZOld._29_10_2019;
 import org.junit.Test;
 
 public class _29_10_2019Test {
