@@ -31,7 +31,7 @@ public class Core {
       database.createInitialData();
     }
     boolean cont = true;
-    console.printLn(menu.show());
+    //console.printLn(menu.show());
     while (cont) {
 
       String line = console.readLn();
@@ -40,14 +40,17 @@ public class Core {
         case TIMETABLE_SHOW:
           timetableController.show();
           break;
+        case BOOKING_SHOW:
+          bookingController.show();
+          break;
         case BOOKING_ADD:
           bookingController.add();
           break;
         case BOOKING_REMOVE:
           bookingController.remove();
           break;
-        case BOOKING_SHOW:
-          bookingController.show();
+        case BOOKING_MYFLIGHT:
+          bookingController.showMyFlight();
           break;
         case EXIT:
           cont = false;

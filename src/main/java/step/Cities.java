@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Random;
 
 public class Cities implements Iterable<String>{
   private final List<String> cities = Arrays.asList("New York",
@@ -30,16 +31,31 @@ public class Cities implements Iterable<String>{
       "Denver[i]",
       "Washington[j]",
       "Bosto");
-
+  //Override iterate (from interator package)
   @Override
   public Iterator<String> iterator() {
-    return cities.iterator();
-  }
 
+    Iterator<String> iterator = new Iterator<String>() {
+
+      int index = 0;
+
+      @Override
+      public boolean hasNext() {
+        return index < cities.size();
+      }
+
+      @Override
+      public String next() {
+        return cities.get(index++);
+      }
+    };
+
+    return iterator;
+  }
   public void create() {
     try (
         BufferedWriter bw =
-            new BufferedWriter(new FileWriter(new File("src/main/java/lesson12/step/data/cities.txt")));
+            new BufferedWriter(new FileWriter(new File("src/main/java/step/data/cities.txt")));
         ) {
       cities.forEach(c -> {
         try {

@@ -40,7 +40,9 @@ public class TimetableLine {
     TimetableLine that = (TimetableLine) o;
 
     if (time != that.time) return false;
+
     if (src != null ? !src.equals(that.src) : that.src != null) return false;
+
     return dst != null ? dst.equals(that.dst) : that.dst == null;
   }
 

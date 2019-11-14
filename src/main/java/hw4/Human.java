@@ -4,8 +4,7 @@ import hw5.Family;
 
 import java.util.Arrays;
 
-public class Human {
-    Family myFamily;
+public class Human extends Family{
     String name;
     String surName;
     int dateOfBirth;

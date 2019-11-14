@@ -12,4 +12,8 @@ public class BookingController {
   public void show() {
 
   }
+
+  public void showMyFlight() {
+
+  }
 }
