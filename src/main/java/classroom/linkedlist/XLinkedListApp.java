@@ -13,10 +13,10 @@ public class XLinkedListApp {
     //System.out.println(b11);
     //System.out.println(xl);
     System.out.println(xl); // [11,22,33,44]
-    //xl.revert();
+    xl.revert();
     System.out.println(xl); // [44,33,22,11]
-    xl.recursiveReverse();
-    System.out.println(xl); // [44,33,22,11]
+   // xl.recursiveReverse();
+    //System.out.println(xl); // [44,33,22,11]
     //System.out.println(xl.lenght());   // 4
     //System.out.println(xl.lenght_recurtion());  // 4
    // System.out.println(xl.lengthr2()); // 4

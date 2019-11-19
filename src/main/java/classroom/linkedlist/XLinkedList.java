@@ -34,13 +34,17 @@ public class XLinkedList {
   }
 
 
-  class XItem {
-    int value;
-    XItem next;
+  public class XItem {
+    public int value;
+    public XItem next;
 
     public XItem(int value) {
       this.value = value;
     }
+  }
+
+  public void setHead(XItem head) {
+    this.head = head;
   }
 
   private XItem head;

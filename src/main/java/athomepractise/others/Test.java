@@ -1,11 +1,15 @@
 package athomepractise.others;
 
-import java.sql.SQLOutput;
 import java.util.Arrays;
 
 public class Test {
+    enum values{
+        Low,
+        Medium,
+        High
+    }
     public static void main(String[] args) {
-        int[][]arr = new int[4][5];
+       /* int[][]arr = new int[4][5];
         System.out.println(arr.length);
         for (int i = 0; i <arr.length ; i++) {
             for (int j = 0; j < arr[0].length; j++) {
@@ -22,6 +26,17 @@ public class Test {
                 if(i%2!=0) j--; else j++;
             }
             System.out.println();
+        }
+
+        */
+       String s = "MB01 25/12/2019 0100 Baku Moscow 0";
+       String[] split = s.split(" ");
+        System.out.println(Arrays.toString(split));
+        for (int i = 0; i <values.values().length ; i++) {
+            System.out.println(values.values()[i]);
+        }
+        for (values v: values.values()) {
+            System.out.println(v);
         }
     }
 }
