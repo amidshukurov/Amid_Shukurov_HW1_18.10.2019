@@ -4,9 +4,9 @@ public class HappyFamily {
 
     public static void main(String[] args) {
         Pet newPet = new Pet("Dog","Rock", 5, 75,new String[]{"eat","drink","sleep"});
-        Human mother = new Human("Jane","Karlenoe",1955);
-        Human father = new Human("Vito","Karlenoe",1953);
-        Human child = new Human("Jane","Karlenoe",1977,mother,father);
+        Human mother = new Human("Fatima","Agaeva",1955);
+        Human father = new Human("Huseyn","Agaeva",1953);
+        Human child = new Human("Dunya","Agaeva",1977,mother,father);
         child.iq=90;
         child.pet = newPet;
         //Pet methods call

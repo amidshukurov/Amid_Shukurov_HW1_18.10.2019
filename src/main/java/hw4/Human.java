@@ -3,6 +3,7 @@ package hw4;
 import hw5.Family;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 public class Human extends Family{
     String name;
@@ -13,9 +14,6 @@ public class Human extends Family{
     Human mother;
     Human father;
     String[][] schedule;
-
-    public Human() {
-    }
 
     public Human(String name, String surName, int dateOfBirth) {
         this.name = name;
@@ -44,13 +42,35 @@ public class Human extends Family{
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Human human = (Human) o;
+        return dateOfBirth == human.dateOfBirth &&
+                iq == human.iq &&
+                name.equals(human.name) &&
+                surName.equals(human.surName) &&
+                pet.equals(human.pet) &&
+                mother.equals(human.mother) &&
+                father.equals(human.father) &&
+                Arrays.equals(schedule, human.schedule);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(name, surName, dateOfBirth, iq, pet, mother, father);
+        result = 31 * result + Arrays.hashCode(schedule);
+        return result;
+    }
+
+    @Override
     public String toString() {
         String humanInfo = "Human { name= " + name + ", surname= " + surName +", year= " + dateOfBirth + " " +
                 ",iq= " + iq + ", mother = " + mother.name + " " + mother.surName+", father= " + father.name +
                 " "+ father.surName;
         String petInfo =", pet=dog{nickName= " + pet.nickName+ ", age = " + pet.age + ", trickLavel = "
                 + pet.trickLevel+ ", habits= " + Arrays.toString(pet.habits) + "}";
-       if (pet.species.toLowerCase().equals("dog")) {
+       if (pet!=null) {
            return humanInfo+petInfo;
 
        } else

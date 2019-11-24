@@ -5,12 +5,13 @@ import hw4.Pet;
 
 import javax.swing.plaf.IconUIResource;
 import java.util.Arrays;
+import java.util.Objects;
 
 public class Family {
-    Human mother;
-    Human father;
-    Human[] children;
-    Pet pet;
+   private Human mother;
+   private Human father;
+   private Human[] children;
+   private Pet pet;
 
     public Family() {
     }
@@ -55,34 +56,44 @@ public class Family {
     }
 
     public void addChild(Human child) {
+        child.setMother(mother);
+        child.setFather(father);
         Human[] nextChild = new Human[children.length + 1];
         for (int i = 0; i < children.length; i++) {
             nextChild[i] = children[i];
         }
         nextChild[children.length] = child;
-        setChildren(nextChild);
+        children=nextChild;
     }
 
-    /*delete a child -  deleteChild
-    (accepts and array index and deltes the following element;
-    returns a boolean value - was the element deleted or not)
-    */
+    void deleteChild(Human child) {
+        Human[] remainedChilderen = new Human[children.length - 1];
+        int j=0;
+            for (int i = 0; i <children.length ; i++) {
+                if (!child.equals(children[i]) && child.hashCode()==children[i].hashCode()){
+                    remainedChilderen[j++]=children[i];
+                }
+            }
+            children=remainedChilderen;
+
+    }
+
     boolean deleteChild(int index) {
+        Human[] resultOfDeleteChild = new Human[children.length - 1];
         if (children.length >= index && index > 0) {
-            Human[] resultOfDeleteChild = new Human[children.length - 1];
-            System.out.println(children.length);
             int count = 0;
             for (int i = 0; i < children.length; i++) {
                 if (i == index - 1) continue;
                 resultOfDeleteChild[count++] = children[i];
             }
-            setChildren(resultOfDeleteChild);
+            children =resultOfDeleteChild;
             return true;
         } else {
-            System.out.println("False");
+            System.out.println("Wrong index entered. Might be less than 0 or greater than number of children");
             return false;
         }
     }
+
 
     int countFamily() {
         int count = 0;
@@ -93,29 +104,28 @@ public class Family {
 
     @Override
     public String toString() {
-        String result = "Override of family to string";
-        return result;
+        String childNames = "";
+        for (int i = 0; i <children.length ; i++) {
+            childNames= childNames + "\n"+ children[i].getName();
+        }
+        return "Father = "+father.getName()+"\nMother= "+mother.getName()+"\nChilderen: "+childNames;
     }
 
     @Override
-    public boolean equals(Object obj) {
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Family family = (Family) o;
+        return mother.equals(family.mother) &&
+                father.equals(family.father) &&
+                Arrays.equals(children, family.children) &&
+                pet.equals(family.pet);
+    }
 
-        // If the object is compared with itself then return true
-        if (obj == this) {
-            return true;
-        }
-
-		/* Check if o is an instance of Complex or not
-		"null instanceof [type]" also returns false */
-        if (!(obj instanceof Family)) {
-            return false;
-        }
-
-        // typecast o to Complex so that we can compare data members
-        Family c = (Family) obj;
-
-        // Compare the data members and return accordingly
-        return mother.getName().compareTo(c.mother.getName()) == 0
-                && father.getName().compareTo(c.father.getName()) == 0;
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(mother, father, pet);
+        result = 31 * result + Arrays.hashCode(children);
+        return result;
     }
 }
