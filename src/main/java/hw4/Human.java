@@ -6,14 +6,81 @@ import java.util.Arrays;
 import java.util.Objects;
 
 public class Human extends Family{
-    String name;
-    String surName;
-    int dateOfBirth;
-    int iq;
-    Pet pet;
-    Human mother;
-    Human father;
-    String[][] schedule;
+   private String name;
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurName() {
+        return surName;
+    }
+
+    public void setSurName(String surName) {
+        this.surName = surName;
+    }
+
+    public int getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(int dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public int getIq() {
+        return iq;
+    }
+
+    public void setIq(int iq) {
+        this.iq = iq;
+    }
+
+    @Override
+    public Pet getPet() {
+        return pet;
+    }
+
+    @Override
+    public void setPet(Pet pet) {
+        this.pet = pet;
+    }
+
+    @Override
+    public Human getMother() {
+        return mother;
+    }
+
+    @Override
+    public void setMother(Human mother) {
+        this.mother = mother;
+    }
+
+    @Override
+    public Human getFather() {
+        return father;
+    }
+
+    @Override
+    public void setFather(Human father) {
+        this.father = father;
+    }
+
+    public String[][] getSchedule() {
+        return schedule;
+    }
+
+    public void setSchedule(String[][] schedule) {
+        this.schedule = schedule;
+    }
+
+    private String surName;
+   private int dateOfBirth;
+   private int iq;
+   private Pet pet;
+   private Human mother;
+   private Human father;
+   private String[][] schedule;
 
     public Human(String name, String surName, int dateOfBirth) {
         this.name = name;

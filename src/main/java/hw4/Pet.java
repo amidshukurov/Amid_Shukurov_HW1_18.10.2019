@@ -41,11 +41,9 @@ public class Pet {
 
     @Override
     public String toString() {
-        if (species.toLowerCase().equals("dog")) {
 
-            return String.format("dog{nickName= " + nickName + ", age = " + age + ", trickLavel = "
+            return String.format(species+"{nickName= " + nickName + ", age = " + age + ", trickLavel = "
                     + trickLevel + ", habits= " + Arrays.toString(habits)+"}");
-        } else  return " ";
     }
 
 }

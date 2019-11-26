@@ -14,8 +14,12 @@ public class Family {
    private Pet pet;
 
     public Family() {
+
     }
 
+    static {
+        System.out.println("Family class is loaded.");
+    }
     public Family(Human mother, Human father) {
         this.mother = mother;
         this.father = father;

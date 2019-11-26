@@ -7,8 +7,8 @@ public class HappyFamily {
         Human mother = new Human("Fatima","Agaeva",1955);
         Human father = new Human("Huseyn","Agaeva",1953);
         Human child = new Human("Dunya","Agaeva",1977,mother,father);
-        child.iq=90;
-        child.pet = newPet;
+        child.setIq(90);
+        child.setPet(newPet);
         //Pet methods call
         newPet.respond();
         newPet.eat();

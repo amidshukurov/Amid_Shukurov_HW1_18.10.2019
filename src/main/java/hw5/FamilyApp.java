@@ -10,6 +10,7 @@ public class FamilyApp {
         Family myFamily2 = myFamily;
         Human child = new Human("Jhon", "Karlenoe", 1970);
         Human child2 = new Human("Jessi", "Karlenoe", 1980);
+
         myFamily.addChild(child);
         myFamily.addChild(child2);
 
