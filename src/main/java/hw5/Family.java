@@ -14,6 +14,7 @@ public class Family {
    private Pet pet;
 
     public Family() {
+        System.out.println("Family object is loaded.");
 
     }
 
@@ -21,6 +22,7 @@ public class Family {
         System.out.println("Family class is loaded.");
     }
     public Family(Human mother, Human father) {
+        System.out.println("Family object is loaded.");
         this.mother = mother;
         this.father = father;
         children = new Human[0];
