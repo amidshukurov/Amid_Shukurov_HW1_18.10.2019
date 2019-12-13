@@ -14,15 +14,14 @@ public class Family {
    private Pet pet;
 
     public Family() {
-        System.out.println("Family object is loaded.");
+      //  System.out.println("Family object is loaded.");
 
     }
 
     static {
-        System.out.println("Family class is loaded.");
+     //   System.out.println("Family class is loaded.");
     }
     public Family(Human mother, Human father) {
-        System.out.println("Family object is loaded.");
         this.mother = mother;
         this.father = father;
         children = new Human[0];
@@ -110,11 +109,11 @@ public class Family {
 
     @Override
     public String toString() {
-        String childNames = "";
+        String [] childNames = new String[children.length];
         for (int i = 0; i <children.length ; i++) {
-            childNames= childNames + "\n"+ children[i].getName();
+            childNames[i] = children[i].getName();
         }
-        return "Father = "+father.getName()+"\nMother= "+mother.getName()+"\nChilderen: "+childNames;
+        return "Father = "+father.getName()+"\nMother= "+mother.getName()+"\nChilderen: "+Arrays.toString(childNames);
     }
 
     @Override
@@ -134,4 +133,11 @@ public class Family {
         result = 31 * result + Arrays.hashCode(children);
         return result;
     }
+
+    @Override
+    protected void finalize() throws Throwable {
+        System.out.println("Finalize method is loaded.");
+    }
+
+
 }

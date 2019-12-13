@@ -4,6 +4,8 @@ import hw4.Human;
 
 public class FamilyApp {
     public static void main(String[] args) {
+
+
         Human myMother = new Human("Jane", "Karlenoe", 1955);
         Human myFather = new Human("Vito", "Karlenoe", 1953);
         Family myFamily = new Family(myMother, myFather);
@@ -27,6 +29,7 @@ public class FamilyApp {
         } else {
             System.out.println("not equal");
         }
+
     }
 
 }
